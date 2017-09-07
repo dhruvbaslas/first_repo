@@ -1,0 +1,142 @@
+<ul>
+
+<li> FOR SIngly Linked List </li>
+
+<li> #include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int info;
+struct node * next;
+};
+struct node *head=NULL;
+
+void print();
+void insertfirst();
+void insertend();
+void insertafter();
+void insertpos();
+void deletefirst();
+void deleteend();
+void delete();
+
+void main()
+{
+insertfirst();
+insertfirst();
+insertend();
+insertafter();
+/* insertpos(); */
+print();
+}
+
+void insertfirst()
+{
+int n;
+struct node *newnode;
+newnode=(struct node*)malloc(sizeof(struct node));
+printf("Enter Info\n");
+scanf("%d",&n);
+newnode->info=n;
+if(head==NULL)
+{
+newnode->next=NULL;
+}
+else
+{
+newnode->next=head;
+}
+head=newnode;
+}
+
+void print()
+{
+struct node *temp;
+temp=head;
+
+while(temp!=NULL)
+{
+printf("%d\n",temp->info);
+temp=temp->next;
+}
+}
+
+void insertend()
+{
+	int n;
+	struct node *newnode;
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("Enter Info\n");
+	scanf("%d",&n);
+	newnode->info=n; 
+	struct node *temp;
+	temp=head;
+	while(temp->next!=NULL)
+	{
+		temp=temp->next;
+	}
+	temp->next=newnode;
+	newnode->next=NULL;
+}
+
+void insertafter()
+{
+	int n,m;
+	struct node *newnode;
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("Enter Info\n");
+	scanf("%d",&n);
+	newnode->info=n;
+	printf("Enter After Which Element\n");
+	scanf("%d",&m);
+	struct node *temp;
+	temp=head;
+	while((temp->info!=m)&&(temp->next!=NULL))
+	{
+		temp=temp->next;
+	}
+	newnode->next=temp->next;
+	temp->next=newnode;
+}
+
+
+/*
+void insertpos()
+{
+	int n,c=1,m;
+	struct node *newnode;
+	newnode=(struct node*)malloc(sizeof(struct node));
+	printf("Enter Info\n");
+	scanf("%d",&n);
+	newnode->info=n; 
+	struct node *temp=head;
+	printf("Enter The Position\n");
+	scanf("%d\n",&m);
+	while((c!=m)||(temp->next!=NULL))
+	{
+		c++;
+		temp=temp->next;
+	}
+	newnode->next=temp->next;
+	temp->next=newnode;
+}
+
+*/
+
+void deletefirst()
+{
+	
+}
+void deleteend();
+void delete();
+
+
+
+	
+ </li>
+
+
+
+
+
+</ul>
